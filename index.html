@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MoodTune – เพลงที่เข้ากับความรู้สึกของคุณ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Prompt:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>MoodTune</h1>
+      <p class="sub">เล่าความรู้สึกวันนี้ แล้วให้ AI เลือกเพลงให้คุณ</p>
+    </header>
+
+    <!-- ช่องกรอกความรู้สึก -->
+    <section class="box">
+      <label for="moodText">วันนี้คุณรู้สึกอย่างไร</label>
+      <textarea id="moodText" rows="4" maxlength="500" placeholder="เช่น วันนี้เหนื่อยมาก อยากอยู่เงียบๆ"></textarea>
+      <button id="goBtn" class="btn">แนะนำเพลงให้ฉัน</button>
+    </section>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <!-- ผลลัพธ์ -->
+    <section id="result" hidden>
+      <div class="mood-box">
+        <span class="chip" id="moodChip"></span>
+        <p id="summary"></p>
+      </div>
+      <div id="cards" class="cards"></div>
+    </section>
+
+    <!-- ประวัติ 5 รายการล่าสุด (ทางเลือก) -->
+    <section id="historyBox" hidden>
+      <h2>ประวัติล่าสุด</h2>
+      <ul id="history"></ul>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
